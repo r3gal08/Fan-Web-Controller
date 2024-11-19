@@ -1,32 +1,25 @@
 # Fan Web Controller
 
-Set following parameter under Serial Flasher Options:
+A FreeRTOS program I created to run on an ESP8266 microcontroller device. The device replaced a broken fan's remote control function and allowed me to mimic its input with a microcontroller. The microcontroller was controlled by local network UDP packets, which would signal the various controls.
 
-* Set `Default serial port`.
+This project was an overall success until I accidentally spliced the fan's power inputs due to a bad solder job and fried the control board. I learned a lot about networking and programming with FreeRTOS though :)
 
-Set following parameters under Example Configuration Options:
+## Configuration
 
-* Set `WiFi SSID` of the Router (Access-Point).
+### Serial Flasher Options
 
-* Set `WiFi Password` of the Router (Access-Point).
+- Set the `Default serial port`.
 
-* Set `IP version` of the example to be IPV4 or IPV6.
+### Example Configuration Options
 
-* Set `Port` number that represents remote port the example will create.
+- Set the `WiFi SSID` of the router (Access Point).
+- Set the `WiFi Password` of the router (Access Point).
+- Set the `IP version` of the example to be IPv4 or IPv6.
+- Set the `Port` number that represents the remote port the example will create.
 
 ## Build and Flash
 
-Build the project and flash it to the board, then run monitor tool to view serial output:
+Build the project and flash it to the board, then run the monitor tool to view serial output:
 
-```
+```bash
 make -j4 flash monitor
-```
-
-(To exit the serial monitor, type ``Ctrl-]``.)
-
-See the Getting Started Guide for full steps to configure and use ESP-IDF to build projects.
-
-
-## Troubleshooting
-
-Start server first, to receive data sent from the client (application).
